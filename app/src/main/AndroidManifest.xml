@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ListMuseumActivity" />
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".AcropolisActivity" />
+        <activity android:name=".BenakiMuseumActivity"></activity>
     </application>
 
 </manifest>

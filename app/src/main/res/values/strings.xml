@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MuseDroid</string>
+    <string name="ListMuseum">MuseumList</string>
+    <string name="button1">Museum</string>
+    <string name="button2">Nearby Museums</string>
+    <string name="button3">(Visited/Favorites)</string>
+
+    <string-array name="Museums">
+        <item>Μουσείο Ακρόπολης</item>
+        <item>Πολεμικό Μουσείο</item>
+        <item>Μουσείο Μπενάκη</item>
+        <item>Εθνικό Αρχαιολογικό Μουσείο</item>
+        <item>Μουσείο Κυκλαδικής Τέχνης</item>
+        <item>Βυζαντινό και Χριστιανικό Μουσείο</item>
+        <item>Μουσείο της Αρχαίας Αγοράς</item>
+        <item>Πολεμικό Μουσείο</item>
+    </string-array>
 </resources>
