@@ -14,20 +14,30 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class ListMuseumActivity extends AppCompatActivity {
     ListView listView;
     Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_museum);
+
+        ArrayList<String> museumList = new ArrayList<>();
+        museumList.add("Μουσείο Ακρόπολης");
+        museumList.add("Πολεμικό Μουσείο");
+        museumList.add("Μουσείο Μπενάκη");
+        museumList.add("Βυζαντινό και Χριστιανικό Μουσείο");
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         listView = (ListView)findViewById(R.id.listView);
         toolbar.setTitle(getResources().getString(R.string.ListMuseum));
+        // Create The Adapter with passing ArrayList as 3rd paramete
+        /*getResources().getStringArray(R.array.Museums)*/
         ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(ListMuseumActivity.this,
-                android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.Museums)){
+                android.R.layout.simple_list_item_1,museumList){
             @Override
             public View getView(int position, View convertView, ViewGroup parent){
                 /// Get the Item from ListView
@@ -54,9 +64,10 @@ public class ListMuseumActivity extends AppCompatActivity {
                 return view;
             }
         };
-
+        // register onClickListener to handle click events on each item
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
+            // argument position gives the index of item which is clicked
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 if(position==0){
                     Intent intent = new Intent(view.getContext(),AcropolisActivity.class);
@@ -76,7 +87,7 @@ public class ListMuseumActivity extends AppCompatActivity {
         });
 
 
-
+        // Set The Adapter
         listView.setAdapter(mAdapter);
 
     }
